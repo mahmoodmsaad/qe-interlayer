@@ -12,7 +12,7 @@ st.caption("Upload Quantum ESPRESSO pw.x output → layer means, spacings, CSV +
 
 upl = st.file_uploader("Upload pw.x output (.out)", type=["out", "txt", "log"])
 tol = st.slider("Layer clustering tolerance (Å)", 0.05, 0.60, 0.30, 0.01)
-bulk_ref = st.checkbox("Show bulk Cu(111) reference ≈ 2.08 Å", value=True)
+bulk_ref = st.checkbox("Show bulk Cu(111) reference ≈ 2.04 Å", value=True)
 
 if upl:
     text = upl.read().decode("utf-8", errors="ignore")
