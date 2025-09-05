@@ -29,9 +29,9 @@ if upl:
         df = layers_from_z(z, tol=tol)
 
         # % deviation from bulk (111) optional:
-        ref = 2.08
+        ref = 2.04
         s = df["Spacing to next (Å)"].copy()
-        df["% dev vs 2.08 Å"] = s.apply(lambda v: None if pd.isna(v) else 100.0*(v-ref)/ref)
+        df["% dev vs 2.04 Å"] = s.apply(lambda v: None if pd.isna(v) else 100.0*(v-ref)/ref)
 
         st.subheader("Layers (bottom→top)")
         st.dataframe(df, use_container_width=True)
@@ -47,7 +47,7 @@ if upl:
         ax = fig.axes[0]
         if bulk_ref and df["Spacing to next (Å)"].notna().any():
             ax.axhline(ref, linestyle="--", linewidth=1)
-            ax.text(0.5, ref, " bulk (111) ≈ 2.08 Å", va="bottom")
+            ax.text(0.5, ref, " bulk (111) ≈ 2.04 Å", va="bottom")
         st.pyplot(fig)
 
         # PNG download
